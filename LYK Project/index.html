@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LYK Project | Circular Regenerated Yarn Platform | Fashion Comfort Group</title>
+  <meta name="description" content="LYK (Lubaba Yarn Kitchen) — our circular yarn platform transforming post-industrial textile waste into premium, traceable regenerated yarns for global knitwear brands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    .lyk-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px var(--content-padding) 80px;
+      overflow: hidden;
+      background: #09130a;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .lyk-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      z-index: 1;
+    }
+
+    .lyk-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(13, 26, 15, 0.5) 0%, rgba(9, 19, 10, 0.9) 100%);
+      z-index: 2;
+    }
+
+    .lyk-hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .circle-step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(201, 169, 97, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- ============================================================ -->
+  <!-- NAVIGATION -->
+  <!-- ============================================================ -->
+  <nav class="ds-nav static" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo-wrap">
+        <span class="ds-nav-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9" stroke="var(--gold)" stroke-width="1.3"/>
+            <path d="M7 12c1.4-2.4 3.2-3 5-3s3.6.6 5 3c-1.4 2.4-3.2 3-5 3s-3.6-.6-5-3z" stroke="var(--gold)" stroke-width="1.3"/>
+            <circle cx="12" cy="12" r="1.8" fill="var(--gold)"/>
+          </svg>
+        </span>
+        <span class="ds-nav-logo">Fashion Comfort <span class="ds-logo-sub">GROUP</span></span>
+      </a>
+      <ul class="ds-nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About Us</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Responsibility</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link active" data-i18n="nav.lyk">LYK Project</a></li>
+        <li><a href="index.html#contact" class="ds-nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="ds-nav-actions">
+        <a href="index.html#contact" class="ds-nav-cta">Inquire <span>→</span></a>
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">
+            <span class="lang-flag"><svg viewBox="0 0 60 30"><clipPath id="sl_en"><circle cx="30" cy="15" r="15"></circle></clipPath><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#sl_en)"></path><path d="M30,0V30 M0,15H60" stroke="#fff" stroke-width="10"></path><path d="M30,0V30 M0,15H60" stroke="#C8102E" stroke-width="6"></path></svg></span>
+            <span class="lang-code">EN</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">
+            <span class="lang-flag"><svg viewBox="0 0 6 4"><rect width="6" height="4" fill="#c60b1e"></rect><rect y="1" width="6" height="2" fill="#ffc400"></rect></svg></span>
+            <span class="lang-code">ES</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">
+            <span class="lang-flag"><svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff"></rect><circle cx="30" cy="20" r="12" fill="#bc002d"></circle></svg></span>
+            <span class="lang-code">JA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO SECTION -->
+  <!-- ============================================================ -->
+  <header class="lyk-hero">
+    <video class="lyk-hero-video" autoplay muted loop playsinline>
+      <source src="media/LYK-hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="lyk-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white" data-i18n="lyk.hero_subtitle">CIRCULAR YARN PLATFORM &bull; LUBABA YARN KITCHEN</div>
+      <h1 class="ds-h1" style="color:white;" data-i18n="lyk.hero_h1">From post-industrial waste to high-value regenerated yarn</h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.85);margin:0 auto 36px;" data-i18n="lyk.hero_intro">LYK is our closed-loop yarn initiative, transforming factory cutting clippings and fiber remnants into premium, fully traceable yarns for global knitwear programs.</p>
+      <div class="hero-actions">
+        <a href="#system" class="ds-btn ds-btn--gold ds-btn--pill">Discover the Circular System ↓</a>
+        <a href="index.html#contact" class="ds-btn ds-btn--ghost-white ds-btn--pill">Request LYK Swatches →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- STATS RIBBON -->
+  <!-- ============================================================ -->
+  <div class="stats-strip">
+    <div class="stats-strip-inner">
+      <div>
+        <span class="stat-number">-80%</span>
+        <span class="stat-label">Water Consumption (Zero Dyeing)</span>
+      </div>
+      <div>
+        <span class="stat-number">-65%</span>
+        <span class="stat-label">CO₂ Carbon Footprint</span>
+      </div>
+      <div>
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Pre-Consumer Waste Diverted</span>
+      </div>
+      <div>
+        <span class="stat-number">DPP</span>
+        <span class="stat-label">Digital Passport Ready</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- THE CIRCULAR SYSTEM -->
+  <!-- ============================================================ -->
+  <section id="system" class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <div class="ds-eyebrow" data-i18n="lyk.section_system">THE CIRCULAR PROCESS</div>
+        <h2 class="ds-h2" data-i18n="lyk.diff_title">A circular system, not just a marketing claim</h2>
+        <p class="ds-lead">A closed-loop industrial infrastructure designed to keep valuable fibers circulating indefinitely through European fashion supply chains.</p>
+      </div>
+
+      <div class="ds-grid-4">
+        <div class="ds-card">
+          <div class="circle-step-badge">01</div>
+          <h4 class="ds-card-title" data-i18n="lyk.diff_1_title">Optical Color Sorting</h4>
+          <p class="ds-card-text">Post-industrial cutting waste is categorized strictly by fiber type and original shade, eliminating the need for subsequent wet chemical re-dyeing.</p>
+        </div>
+        <div class="ds-card">
+          <div class="circle-step-badge">02</div>
+          <h4 class="ds-card-title">Mechanical Garnetting</h4>
+          <p class="ds-card-text">Clean cutting scraps undergo gentle mechanical carding to preserve natural fiber length, preventing pilling and maintaining yarn tensile integrity.</p>
+        </div>
+        <div class="ds-card">
+          <div class="circle-step-badge">03</div>
+          <h4 class="ds-card-title" data-i18n="lyk.diff_3_title">Regenerated Spinning</h4>
+          <p class="ds-card-text">Reclaimed fibers are precision-blended with certified GOTS organic cotton or lyocell to create consistent Nm counts suitable for 3GG to 12GG machines.</p>
+        </div>
+        <div class="ds-card">
+          <div class="circle-step-badge">04</div>
+          <h4 class="ds-card-title" data-i18n="lyk.diff_2_title">Traceability by Design</h4>
+          <p class="ds-card-text">Every yarn lot receives a Digital Product Passport (DPP) tracking original cutting batch origins, GRS transaction certificates, and LCA metrics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WHY THIS MATTERS (REGULATION & CONTEXT) -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-grid-2">
+        <div>
+          <div class="ds-eyebrow" data-i18n="lyk.section_context">Regulatory Alignment</div>
+          <h2 class="ds-h2" data-i18n="lyk.matters_title">Why circularity matters now</h2>
+          <p class="ds-lead" style="margin-bottom:20px;" data-i18n="lyk.problem_text">The global fashion industry is pivoting toward mandatory recycled content, driven by upcoming EU Ecodesign (ESPR) directives and brand carbon targets. LYK gives our partners an unfair advantage in compliance and sustainable storytelling.</p>
+          <p class="ds-body">By controlling our own spinning and fiber sorting pipelines, we shield our clients from virgin commodity price volatility while guaranteeing genuine pre-consumer authenticity.</p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="ds-card" style="padding:22px;">
+            <h4 style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:4px;" data-i18n="lyk.matters_1_title">Fiber Value Retention</h4>
+            <p style="font-size:13px;color:var(--text-secondary);" data-i18n="lyk.matters_1_text">Keeping luxury fibers in continuous circulation, reducing waste and preserving the embedded energy of combed cotton and wool.</p>
+          </div>
+          <div class="ds-card" style="padding:22px;">
+            <h4 style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:4px;" data-i18n="lyk.matters_2_title">Reduced Virgin Dependency</h4>
+            <p style="font-size:13px;color:var(--text-secondary);" data-i18n="lyk.matters_2_text">Less reliance on volatile external virgin crops, establishing a resilient circular ecosystem inside our own industrial group.</p>
+          </div>
+          <div class="ds-card" style="padding:22px;">
+            <h4 style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:4px;" data-i18n="lyk.matters_3_title">EU Regulation Readiness</h4>
+            <p style="font-size:13px;color:var(--text-secondary);" data-i18n="lyk.matters_3_text">Engineered directly in compliance with European Union ESPR (Ecodesign for Sustainable Products Regulation) and upcoming Waste Framework standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- HIGHLIGHT QUOTE -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--dark" style="text-align:center;">
+    <div class="ds-container-narrow">
+      <div style="font-family:var(--font-display);font-size:32px;color:var(--gold);margin-bottom:12px;">✦</div>
+      <h2 class="ds-h2" style="color:white;font-style:italic;">&#8220;Circularity is no longer a peripheral capsule — it is the future operating standard of commercial knitwear.&#8221;</h2>
+      <p style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-top:20px;">LUBABA YARN KITCHEN &bull; BANGLADESH</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WORK WITH US CTA -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white" style="text-align:center;">
+    <div class="ds-container-narrow">
+      <div class="ds-eyebrow">PIONEER SUSTAINABLE COLLECTIONS</div>
+      <h2 class="ds-h2">Incorporate LYK into your next seasonal line</h2>
+      <p class="ds-lead" style="margin:0 auto 36px;">Our design studios in Barcelona and Tokyo can provide sample swatches, yarn composition cards, and LCA impact certificates for your creative and sustainability teams.</p>
+      <a href="index.html#contact" class="ds-btn ds-btn--gold ds-btn--pill">Request LYK Swatches &amp; Dossier →</a>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="ds-footer">
+    <div class="ds-footer-inner">
+      <div class="ds-footer-brand">
+        <p class="ds-footer-logo">Fashion Comfort</p>
+        <p class="ds-footer-tagline" data-i18n="footer.tagline">European &amp; international knitwear manufacturing partner established since 2002. Combining creative development with in-house industrial production.</p>
+        <div class="ds-footer-badges">
+          <span class="ds-footer-badge">GOTS Certified</span>
+          <span class="ds-footer-badge">GRS Recycled</span>
+          <span class="ds-footer-badge">RWS Wool</span>
+          <span class="ds-footer-badge">OEKO-TEX</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_quick_links">Quick Navigation</h4>
+        <ul class="ds-footer-links">
+          <li><a href="index.html" data-i18n="common.footer_home">Home</a></li>
+          <li><a href="index.html#about" data-i18n="common.footer_about">About Us</a></li>
+          <li><a href="products.html" data-i18n="nav.products">Selected Products</a></li>
+          <li><a href="manufacturing.html" data-i18n="nav.manufacturing">Manufacturing Facility</a></li>
+          <li><a href="responsibility.html" data-i18n="nav.responsibility">Responsibility &amp; ESG</a></li>
+          <li><a href="our-history.html" data-i18n="nav.history">Our History</a></li>
+          <li><a href="lyk.html" data-i18n="nav.lyk">LYK Circular Project</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading">Capabilities</h4>
+        <ul class="ds-footer-links">
+          <li><a href="manufacturing.html">3GG - 14GG Knitting</a></li>
+          <li><a href="manufacturing.html">72h Sample Turnaround</a></li>
+          <li><a href="responsibility.html">Organic &amp; Recycled Yarns</a></li>
+          <li><a href="lyk.html">Regenerated Fiber Spinning</a></li>
+          <li><a href="index.html#contact">Direct Factory Access</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_contact_title">Contact &amp; Connect</h4>
+        <ul class="ds-footer-links">
+          <li><a href="mailto:info@fashioncomfort.com">info@fashioncomfort.com</a></li>
+          <li><a href="https://linkedin.com/company/fashion-comfort-group" target="_blank" rel="noopener">LinkedIn Profile ↗</a></li>
+          <li><a href="https://instagram.com/fashioncomfortgroup" target="_blank" rel="noopener">Instagram Archive ↗</a></li>
+          <li><a href="index.html#contact" style="color:var(--gold-light);font-weight:600;">Get in Touch →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <p data-i18n="footer.copyright">© 2026 Fashion Comfort Group. All rights reserved.</p>
+      <a href="#navbar" class="ds-back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our History &amp; Heritage | Fashion Comfort Group</title>
+  <meta name="description" content="The journey of Fashion Comfort Group — from our founding in 2002 to becoming a premier international knitwear manufacturing partner.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    .history-hero {
+      padding: 160px var(--content-padding) 64px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .founders-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .founders-img-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .founders-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .founders-img-box::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(201, 169, 97, 0.4);
+      border-radius: var(--radius-lg);
+      pointer-events: none;
+    }
+
+    @media (max-width: 992px) {
+      .founders-wrap {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- ============================================================ -->
+  <!-- NAVIGATION -->
+  <!-- ============================================================ -->
+  <nav class="ds-nav static" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo-wrap">
+        <span class="ds-nav-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9" stroke="var(--gold)" stroke-width="1.3"/>
+            <path d="M7 12c1.4-2.4 3.2-3 5-3s3.6.6 5 3c-1.4 2.4-3.2 3-5 3s-3.6-.6-5-3z" stroke="var(--gold)" stroke-width="1.3"/>
+            <circle cx="12" cy="12" r="1.8" fill="var(--gold)"/>
+          </svg>
+        </span>
+        <span class="ds-nav-logo">Fashion Comfort <span class="ds-logo-sub">GROUP</span></span>
+      </a>
+      <ul class="ds-nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About Us</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Responsibility</a></li>
+        <li><a href="our-history.html" class="ds-nav-link active" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Project</a></li>
+        <li><a href="index.html#contact" class="ds-nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="ds-nav-actions">
+        <a href="index.html#contact" class="ds-nav-cta">Inquire <span>→</span></a>
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">
+            <span class="lang-flag"><svg viewBox="0 0 60 30"><clipPath id="sh_en"><circle cx="30" cy="15" r="15"></circle></clipPath><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#sh_en)"></path><path d="M30,0V30 M0,15H60" stroke="#fff" stroke-width="10"></path><path d="M30,0V30 M0,15H60" stroke="#C8102E" stroke-width="6"></path></svg></span>
+            <span class="lang-code">EN</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">
+            <span class="lang-flag"><svg viewBox="0 0 6 4"><rect width="6" height="4" fill="#c60b1e"></rect><rect y="1" width="6" height="2" fill="#ffc400"></rect></svg></span>
+            <span class="lang-code">ES</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">
+            <span class="lang-flag"><svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff"></rect><circle cx="30" cy="20" r="12" fill="#bc002d"></circle></svg></span>
+            <span class="lang-code">JA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERITAGE HERO -->
+  <!-- ============================================================ -->
+  <header class="history-hero">
+    <div class="ds-container">
+      <div class="ds-eyebrow">ESTABLISHED 2002 &mdash; TWO DECADES OF CRAFTSMANSHIP</div>
+      <h1 class="ds-h1" style="max-width:880px;">A heritage built on long-term trust, technical mastery, and global vision</h1>
+      <p class="ds-lead">From our origins with early knitting lines in Dhaka to a multi-continent manufacturing alliance connecting Barcelona, Prato, Tokyo, and modern automated production facilities.</p>
+
+      <div class="founders-wrap">
+        <div>
+          <div class="ds-card" style="background:var(--bg-stone);border-color:var(--border);">
+            <div style="font-family:var(--font-display);font-size:28px;color:var(--gold-dark);margin-bottom:12px;">&#8220;</div>
+            <p style="font-family:var(--font-display);font-size:clamp(17px,1.6vw,21px);font-weight:400;font-style:italic;line-height:1.6;color:var(--text-primary);margin-bottom:20px;">
+              Manufacturing knitwear was never meant to be a transactional commodity. It is a shared technical discipline — balancing the tactile beauty of yarn with exacting engineering and unbending commitments to our people.
+            </p>
+            <div style="border-top:1px solid var(--border);padding-top:14px;display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <strong style="color:var(--primary);font-size:15px;display:block;">Founders &amp; Leadership</strong>
+                <span style="font-size:12px;color:var(--text-muted);">Fashion Comfort Group (Barcelona &amp; Dhaka)</span>
+              </div>
+              <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;">EST. 2002</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="founders-img-box">
+          <img src="images/photo_founders.jpg" alt="Founders of Fashion Comfort Group">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- MILESTONE TIMELINE -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-section-header text-center">
+        <div class="ds-eyebrow">CHRONOLOGICAL MILESTONES</div>
+        <h2 class="ds-h2">Evolution of Fashion Comfort Group</h2>
+        <p class="ds-lead">How two decades of disciplined growth shaped our present international operations.</p>
+      </div>
+
+      <div class="timeline-wrap" id="timelineWrap">
+        <!-- Interactive Progress Fill Beam -->
+        <div class="timeline-progress-track">
+          <div class="timeline-progress-bar" id="timelineProgressBar"></div>
+        </div>
+
+        <!-- 2002 -->
+        <div class="timeline-item" data-milestone="2002">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-tag">FOUNDATION</span>
+              <span class="timeline-year">2002</span>
+            </div>
+            <h4 class="timeline-title">Foundation &amp; Early Operations</h4>
+            <p class="timeline-desc">Fashion Comfort is founded in Dhaka, Bangladesh, establishing direct manufacturing operations focused on high-quality knitwear for European export markets.</p>
+          </div>
+        </div>
+
+        <!-- 2006 -->
+        <div class="timeline-item" data-milestone="2006">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-tag">EXPANSION &amp; ALLIANCES</span>
+              <span class="timeline-year">2006</span>
+            </div>
+            <h4 class="timeline-title">Spanish Retailer Partnerships</h4>
+            <p class="timeline-desc">Secured first long-term development contracts with major Spanish retail groups including Inditex (Zara, Pull&Bear) and Mango, establishing our standard for rapid turnaround.</p>
+          </div>
+        </div>
+
+        <!-- 2011 -->
+        <div class="timeline-item" data-milestone="2011">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-tag">AUTOMATION &amp; PRECISION</span>
+              <span class="timeline-year">2011</span>
+            </div>
+            <h4 class="timeline-title">Electronic Knitting Automation</h4>
+            <p class="timeline-desc">Major capital investment introducing German Stoll computerized flat-knitting technology, scaling multi-gauge capabilities from 3GG heavy knits to 12GG fine garments.</p>
+          </div>
+        </div>
+
+        <!-- 2015 -->
+        <div class="timeline-item" data-milestone="2015">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-tag">BARCELONA DESIGN STUDIO</span>
+              <span class="timeline-year">2015</span>
+            </div>
+            <h4 class="timeline-title">Barcelona Studio Inception</h4>
+            <p class="timeline-desc">Fashion Comfort Europe S.L. opens its creative and commercial design studio in Vilassar de Mar, Barcelona, providing immediate proximity to European creative directors.</p>
+          </div>
+        </div>
+
+        <!-- 2019 -->
+        <div class="timeline-item" data-milestone="2019">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-tag">INTEGRATED COMPLEX</span>
+              <span class="timeline-year">2019</span>
+            </div>
+            <h4 class="timeline-title">ASDWA Fashion Ltd. Integrated Plant</h4>
+            <p class="timeline-desc">Consolidation into our unified 553-machine manufacturing complex, ASDWA Fashion Ltd., housing knitting, linking, washing, lab testing, and social facilities under one roof.</p>
+          </div>
+        </div>
+
+        <!-- 2021 -->
+        <div class="timeline-item" data-milestone="2021">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-tag">ESG &amp; CERTIFICATIONS</span>
+              <span class="timeline-year">2021</span>
+            </div>
+            <h4 class="timeline-title">Comprehensive ESG Certification</h4>
+            <p class="timeline-desc">Awarded international environmental certifications: GOTS (Organic Textile), GRS (Global Recycled), RWS (Responsible Wool), and OEKO-TEX Standard 100.</p>
+          </div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="timeline-item" data-milestone="2023">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-tag">CIRCULAR REVOLUTION</span>
+              <span class="timeline-year">2023</span>
+            </div>
+            <h4 class="timeline-title">LYK Circular Regenerated Yarn Platform</h4>
+            <p class="timeline-desc">Inaugurated LYK (Lubaba Yarn Kitchen), a pioneering circular initiative transforming post-industrial cutting scraps into premium regenerated yarns with zero water dyeing.</p>
+          </div>
+        </div>
+
+        <!-- 2026 -->
+        <div class="timeline-item" data-milestone="2026">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-tag">DIGITAL HORIZON</span>
+              <span class="timeline-year">2026</span>
+            </div>
+            <h4 class="timeline-title">Global Digital Showroom &amp; Future Vision</h4>
+            <p class="timeline-desc">Expanded presence into Prato, Tokyo, and Shanghai with connected 3D digital sampling and ongoing LEED Platinum sustainable facility transformation.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- GUIDING PHILOSOPHY -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-section-header text-center">
+        <div class="ds-eyebrow">CORE PILLARS</div>
+        <h2 class="ds-h2">The principles that guide our future</h2>
+      </div>
+
+      <div class="ds-grid-3">
+        <div class="ds-card">
+          <div class="ds-card-icon">🤝</div>
+          <h3 class="ds-card-title">Partnership Over Transactions</h3>
+          <p class="ds-card-text">We build relationships measured in decades, not seasons. Over 80% of our production volume comes from partners who have worked with us for over 10 consecutive years.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">🎯</div>
+          <h3 class="ds-card-title">Technical Precision</h3>
+          <p class="ds-card-text">We invest relentlessly in modern German and Japanese computerized machinery, automated yarn tension controls, and strict laboratory testing protocols.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">🌱</div>
+          <h3 class="ds-card-title">Uncompromising Responsibility</h3>
+          <p class="ds-card-text">From worker healthcare and daycares to solar energy and regenerated yarns, our operational integrity protects our clients' reputations and our communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WORK WITH US CTA -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--dark" style="text-align:center;">
+    <div class="ds-container-narrow">
+      <div class="ds-eyebrow ds-eyebrow--white">BECOME PART OF OUR STORY</div>
+      <h2 class="ds-h2" style="color:white;">Build your next collection with Fashion Comfort</h2>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.75);margin:0 auto 36px;">Experience the difference of a true manufacturing partner with direct factory control and creative European design support.</p>
+      <a href="index.html#contact" class="ds-btn ds-btn--gold ds-btn--pill">Initiate an Inquiry →</a>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="ds-footer">
+    <div class="ds-footer-inner">
+      <div class="ds-footer-brand">
+        <p class="ds-footer-logo">Fashion Comfort</p>
+        <p class="ds-footer-tagline" data-i18n="footer.tagline">European &amp; international knitwear manufacturing partner established since 2002. Combining creative development with in-house industrial production.</p>
+        <div class="ds-footer-badges">
+          <span class="ds-footer-badge">GOTS Certified</span>
+          <span class="ds-footer-badge">GRS Recycled</span>
+          <span class="ds-footer-badge">RWS Wool</span>
+          <span class="ds-footer-badge">OEKO-TEX</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_quick_links">Quick Navigation</h4>
+        <ul class="ds-footer-links">
+          <li><a href="index.html" data-i18n="common.footer_home">Home</a></li>
+          <li><a href="index.html#about" data-i18n="common.footer_about">About Us</a></li>
+          <li><a href="products.html" data-i18n="nav.products">Selected Products</a></li>
+          <li><a href="manufacturing.html" data-i18n="nav.manufacturing">Manufacturing Facility</a></li>
+          <li><a href="responsibility.html" data-i18n="nav.responsibility">Responsibility &amp; ESG</a></li>
+          <li><a href="our-history.html" data-i18n="nav.history">Our History</a></li>
+          <li><a href="lyk.html" data-i18n="nav.lyk">LYK Circular Project</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading">Capabilities</h4>
+        <ul class="ds-footer-links">
+          <li><a href="manufacturing.html">3GG - 14GG Knitting</a></li>
+          <li><a href="manufacturing.html">72h Sample Turnaround</a></li>
+          <li><a href="responsibility.html">Organic &amp; Recycled Yarns</a></li>
+          <li><a href="lyk.html">Regenerated Fiber Spinning</a></li>
+          <li><a href="index.html#contact">Direct Factory Access</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_contact_title">Contact &amp; Connect</h4>
+        <ul class="ds-footer-links">
+          <li><a href="mailto:info@fashioncomfort.com">info@fashioncomfort.com</a></li>
+          <li><a href="https://linkedin.com/company/fashion-comfort-group" target="_blank" rel="noopener">LinkedIn Profile ↗</a></li>
+          <li><a href="https://instagram.com/fashioncomfortgroup" target="_blank" rel="noopener">Instagram Archive ↗</a></li>
+          <li><a href="index.html#contact" style="color:var(--gold-light);font-weight:600;">Get in Touch →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <p data-i18n="footer.copyright">© 2026 Fashion Comfort Group. All rights reserved.</p>
+      <a href="#navbar" class="ds-back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+</body>
+</html>

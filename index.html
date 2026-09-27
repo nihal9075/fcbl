@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Comfort Group | Knitwear Manufacturing Partner Since 2002</title>
+  <meta name="description"
+    content="International knitwear manufacturing partner with 20+ years experience. Offices in Barcelona, Prato, Tokyo, Shanghai and Dhaka. Trusted by Zara, Mango, Pull&Bear and leading fashion brands.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fashion Comfort Group | Knitwear Manufacturing">
+  <meta property="og:description" content="International knitwear manufacturing partner with 20+ years experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    /* Hero section styling */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 160px var(--content-padding) 90px;
+      overflow: hidden;
+      background: #09130a;
+      color: var(--white);
+    }
+
+    .hero-video-container {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.42;
+      transition: opacity 1.5s ease;
+    }
+
+    .hero-video-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(13, 26, 15, 0.45) 0%, rgba(9, 19, 10, 0.88) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero-cards {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: var(--max-width);
+      margin-top: 64px;
+    }
+
+    .hero-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      text-align: left;
+      transition: all var(--transition-base);
+    }
+
+    .hero-card:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .hero-card h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .hero-card p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+
+    /* Stats strip */
+    .stats-strip {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 44px var(--content-padding);
+    }
+
+    .stats-strip-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 4.2vw, 56px);
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Quote break */
+    .quote-break {
+      position: relative;
+      padding: 100px var(--content-padding);
+      background: #111e13;
+      overflow: hidden;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .quote-break video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.28;
+    }
+
+    .quote-break::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(17, 30, 19, 0.75) 0%, rgba(9, 17, 10, 0.92) 100%);
+    }
+
+    .quote-break-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .quote-text {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.2vw, 36px);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--white);
+      margin: 24px 0;
+    }
+
+    /* Sample layout */
+    .sample-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .sample-img-container {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      min-height: 100%;
+      box-shadow: var(--shadow-md);
+    }
+
+    .sample-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 992px) {
+      .hero-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-strip-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .sample-split {
+        grid-template-columns: 1fr;
+      }
+
+      .sample-img-container {
+        aspect-ratio: 4/3;
+      }
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- ============================================================ -->
+  <!-- NAVIGATION -->
+  <!-- ============================================================ -->
+  <nav class="ds-nav" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo-wrap">
+        <span class="ds-nav-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9" stroke="var(--gold)" stroke-width="1.3" />
+            <path d="M7 12c1.4-2.4 3.2-3 5-3s3.6.6 5 3c-1.4 2.4-3.2 3-5 3s-3.6-.6-5-3z" stroke="var(--gold)"
+              stroke-width="1.3" />
+            <circle cx="12" cy="12" r="1.8" fill="var(--gold)" />
+          </svg>
+        </span>
+        <span class="ds-nav-logo">Fashion Comfort <span class="ds-logo-sub">GROUP</span></span>
+      </a>
+      <ul class="ds-nav-links">
+        <li><a href="#about" class="ds-nav-link" data-i18n="nav.about">About Us</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Responsibility</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Project</a></li>
+        <li><a href="#contact" class="ds-nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="ds-nav-actions">
+        <a href="#contact" class="ds-nav-cta">Inquire <span>→</span></a>
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">
+            <span class="lang-flag">
+              <svg viewBox="0 0 60 30">
+                <clipPath id="s_en">
+                  <circle cx="30" cy="15" r="15"></circle>
+                </clipPath>
+                <rect width="60" height="30" fill="#012169"></rect>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#s_en)"></path>
+                <path d="M30,0V30 M0,15H60" stroke="#fff" stroke-width="10"></path>
+                <path d="M30,0V30 M0,15H60" stroke="#C8102E" stroke-width="6"></path>
+              </svg>
+            </span>
+            <span class="lang-code">EN</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">
+            <span class="lang-flag">
+              <svg viewBox="0 0 6 4">
+                <rect width="6" height="4" fill="#c60b1e"></rect>
+                <rect y="1" width="6" height="2" fill="#ffc400"></rect>
+              </svg>
+            </span>
+            <span class="lang-code">ES</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">
+            <span class="lang-flag">
+              <svg viewBox="0 0 60 40">
+                <rect width="60" height="40" fill="#fff"></rect>
+                <circle cx="30" cy="20" r="12" fill="#bc002d"></circle>
+              </svg>
+            </span>
+            <span class="lang-code">JA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO SECTION -->
+  <!-- ============================================================ -->
+  <section id="hero">
+    <div class="hero-video-container">
+      <video class="hero-video" id="hero-video" autoplay muted loop playsinline>
+        <source src="media/0_Ai_generated_Knitted.mp4" type="video/mp4">
+        <source src="media/hero-knitting-web.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white">Since 2002 &mdash; Knitwear Manufacturing Partner</div>
+      <h1 class="ds-h1" style="color: white;" data-i18n="hero.title">Knitwear development
+        &amp;<br><em>manufacturing</em> — built for brands</h1>
+      <p class="ds-lead" style="color: rgba(255,255,255,0.8); margin: 0 auto 36px;" data-i18n="hero.subtitle">Over 20
+        years of experience supporting international fashion brands with reliable development, rapid sampling and
+        controlled production.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="ds-btn ds-btn--gold ds-btn--pill" data-i18n="common.cta_btn">Work With Us</a>
+        <a href="products.html" class="ds-btn ds-btn--ghost-white ds-btn--pill" data-i18n="nav.products">View Selected
+          Products →</a>
+      </div>
+    </div>
+
+    <div class="hero-cards">
+      <div class="hero-cards-grid">
+        <div class="hero-card">
+          <div
+            style="font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;">
+            HERITAGE</div>
+          <h3 data-i18n="about.story_bullet_1">Established Since 2002</h3>
+          <p data-i18n="hero.hero_card_1_text">Production operations in Bangladesh with direct European-standard quality
+            control</p>
+        </div>
+        <div class="hero-card">
+          <div
+            style="font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;">
+            GLOBAL REACH</div>
+          <h3 data-i18n="about.story_bullet_2">International Presence</h3>
+          <p data-i18n="hero.hero_card_2_text">Offices in Barcelona, Prato, Tokyo, Shanghai and Dhaka serving leading
+            global brands</p>
+        </div>
+        <div class="hero-card">
+          <div
+            style="font-size:11px;font-weight:700;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;">
+            SUSTAINABILITY</div>
+          <h3 data-i18n="hero.hero_card_3_title">Responsible Production</h3>
+          <p data-i18n="hero.hero_card_3_text">GOTS, GRS, RCS, and RWS certified sustainable knitwear manufacturing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WHO WE ARE -->
+  <!-- ============================================================ -->
+  <section id="about" class="ds-section ds-section--dark">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <div class="ds-eyebrow ds-eyebrow--white" data-i18n="about.tag">Who We Are</div>
+        <h2 class="ds-h2" style="max-width: 820px;" data-i18n="about.story_text_1">Fashion Comfort Group is an
+          international knitwear manufacturing partner with over 20 years of experience, working with fashion brands
+          that value quality, reliability and responsible production.</h2>
+      </div>
+
+      <div class="ds-grid-3">
+        <div class="ds-card ds-card--dark">
+          <div class="ds-card-icon"
+            style="background:rgba(201,169,97,0.15);color:var(--gold);border-color:rgba(201,169,97,0.3);">01</div>
+          <h3 class="ds-card-title" data-i18n="about.story_bullet_1">Established Since 2002</h3>
+          <p class="ds-card-text" data-i18n="about.story_bullet_1_text">Production operations in Bangladesh with direct
+            quality control and our own manufacturing facility, ASDWA Fashion Ltd.</p>
+        </div>
+        <div class="ds-card ds-card--dark">
+          <div class="ds-card-icon"
+            style="background:rgba(201,169,97,0.15);color:var(--gold);border-color:rgba(201,169,97,0.3);">02</div>
+          <h3 class="ds-card-title" data-i18n="about.story_bullet_2">International Presence</h3>
+          <p class="ds-card-text" data-i18n="about.story_bullet_2_text">Design, development, sourcing and sales teams
+            across Barcelona, Prato, Shanghai and Tokyo acting as client extensions.</p>
+        </div>
+        <div class="ds-card ds-card--dark">
+          <div class="ds-card-icon"
+            style="background:rgba(201,169,97,0.15);color:var(--gold);border-color:rgba(201,169,97,0.3);">03</div>
+          <h3 class="ds-card-title" data-i18n="about.story_bullet_3">Long-term Partnerships</h3>
+          <p class="ds-card-text" data-i18n="about.story_bullet_3_text">A manufacturing partner focused on consistency,
+            continuity and stable cooperation with the world's leading retail brands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- STATS STRIP -->
+  <!-- ============================================================ -->
+  <div class="stats-strip">
+    <div class="stats-strip-inner">
+      <div>
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Years of Experience</span>
+      </div>
+      <div>
+        <span class="stat-number">553</span>
+        <span class="stat-label">Knitting Machines</span>
+      </div>
+      <div>
+        <span class="stat-number">2,500</span>
+        <span class="stat-label">Artisans &amp; Staff</span>
+      </div>
+      <div>
+        <span class="stat-number">5</span>
+        <span class="stat-label">Global Hubs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- WHY FASHION COMFORT -->
+  <!-- ============================================================ -->
+  <section id="why" class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <div class="ds-eyebrow" data-i18n="about.why_title">Why Fashion Comfort</div>
+        <h2 class="ds-h2">Engineering excellence from creative swatch to finished delivery</h2>
+        <p class="ds-lead" data-i18n="about.why_intro">Brands work with Fashion Comfort because we combine fast
+          development, direct production control and a partnership mindset focused on consistency and reliability.</p>
+      </div>
+
+      <div class="ds-grid-3">
+        <div class="ds-card">
+          <div class="ds-card-icon">⚡</div>
+          <h4 class="ds-card-title" data-i18n="about.why_1">Fast &amp; Flexible Development</h4>
+          <p class="ds-card-text" data-i18n="about.why_1_text">Dedicated sample facility with specialized knitting
+            machines across multiple gauges with up to 72h sample turnaround.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">🏭</div>
+          <h4 class="ds-card-title" data-i18n="about.why_2">Direct Production Control</h4>
+          <p class="ds-card-text" data-i18n="about.why_2_text">Our own factory, ASDWA Fashion Ltd., ensuring quality,
+            consistency, and reliable lead times across all production runs.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">🌱</div>
+          <h4 class="ds-card-title" data-i18n="about.why_3">Responsible Supply Chain</h4>
+          <p class="ds-card-text" data-i18n="about.why_3_text">Certified, transparent and built for long-term
+            collaboration under GOTS, GRS, RCS, and RWS environmental standards.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">🎨</div>
+          <h4 class="ds-card-title" data-i18n="about.why_4">International Design Support</h4>
+          <p class="ds-card-text" data-i18n="about.why_4_text">Design studios in Barcelona, Prato and Tokyo working
+            shoulder-to-shoulder with our clients' creative directors.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">⏳</div>
+          <h4 class="ds-card-title" data-i18n="about.why_5">Product Longevity</h4>
+          <p class="ds-card-text" data-i18n="about.why_5_text">Garment durability, pilling resistance and dimensional
+            stability as core pillars of our sustainability commitment.</p>
+        </div>
+        <div class="ds-card" style="background:var(--primary);color:white;border-color:var(--primary);">
+          <div class="ds-card-icon" style="background:rgba(201,169,97,0.2);color:var(--gold);border-color:var(--gold);">
+            ✦</div>
+          <h4 class="ds-card-title" style="color:white;">High Capacity &amp; Precision</h4>
+          <p class="ds-card-text" style="color:rgba(255,255,255,0.75);">553 computer flat knitting machines covering
+            3GG, 5GG, 7GG, 12GG, and 14GG with Jacquard and Intarsia capability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CINEMATIC QUOTE BREAK -->
+  <!-- ============================================================ -->
+  <div class="quote-break">
+    <video autoplay muted loop playsinline>
+      <source src="media/hero-knitting-web.mp4" type="video/mp4">
+      <source src="media/0_Ai_generated_Knitted.mp4" type="video/mp4">
+    </video>
+    <div class="quote-break-inner">
+      <div style="width: 44px; height: 1px; background: var(--gold); margin: 0 auto 20px;"></div>
+      <p class="quote-text">&#8220;Quality is not an act, it is an exacting habit — built into every stitch, every yarn
+        twist, every season.&#8221;</p>
+      <div style="width: 44px; height: 1px; background: var(--gold); margin: 20px auto 0;"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAMPLE HOME -->
+  <!-- ============================================================ -->
+  <section id="sample-home" class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <div class="ds-eyebrow" data-i18n="about.sample_title">Sample Home</div>
+        <h2 class="ds-h2">Where collection concepts turn into engineered realities</h2>
+        <p class="ds-lead" data-i18n="about.sample_text">Our dedicated Sample Home in Bangladesh is the experimental
+          heartbeat of our operations, engineered to support rapid decision-making and precise product execution.</p>
+      </div>
+
+      <div class="sample-split">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="ds-card">
+            <h4 class="ds-card-title" data-i18n="about.sample_1">Specialized Knitting Facility</h4>
+            <p class="ds-card-text" data-i18n="about.sample_1_text">Dedicated sample building with machines covering
+              multiple gauges, intarsia, cables and 3D knitting techniques.</p>
+          </div>
+          <div class="ds-card">
+            <h4 class="ds-card-title" data-i18n="about.sample_2">Rapid 72-Hour Turnaround</h4>
+            <p class="ds-card-text" data-i18n="about.sample_2_text">Ability to develop multiple protos per day with
+              expedited physical sample dispatch within 72 hours.</p>
+          </div>
+          <div class="ds-card">
+            <h4 class="ds-card-title" data-i18n="about.sample_4">Yarn &amp; Material Innovation</h4>
+            <p class="ds-card-text" data-i18n="about.sample_4_text">Yarn experimentation, custom color blending, and
+              sustainable fiber development built directly into sampling workflows.</p>
+          </div>
+          <div class="ds-card">
+            <h4 class="ds-card-title" data-i18n="about.sample_6">Seamless Client Collaboration</h4>
+            <p class="ds-card-text" data-i18n="about.sample_6_text">Live digital fitting reviews and real-time
+              adjustments with brand design and technical product teams.</p>
+          </div>
+        </div>
+        <div class="sample-img-container">
+          <img src="images/hombre-cardigan.jpeg" alt="Fashion Comfort Knitwear Production Sample">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- INTERNATIONAL TEAMS -->
+  <!-- ============================================================ -->
+  <section id="teams" class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <div class="ds-eyebrow" data-i18n="about.teams_title">International Teams</div>
+        <h2 class="ds-h2" data-i18n="about.teams_heading">Design, development and sourcing — connected globally</h2>
+        <p class="ds-lead" data-i18n="about.teams_text">Our international teams operate as a direct extension of our
+          clients' design and technical departments — combining local proximity with global production power.</p>
+      </div>
+
+      <div class="ds-grid-cards" style="margin-bottom: 48px;">
+        <div class="ds-card">
+          <div
+            style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">
+            SPAIN</div>
+          <h3 class="ds-card-title">Barcelona</h3>
+          <p class="ds-card-text" data-i18n="about.teams_barcelona">European headquarters, trend research, client design
+            collaboration and account management.</p>
+        </div>
+        <div class="ds-card">
+          <div
+            style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">
+            ITALY</div>
+          <h3 class="ds-card-title">Prato</h3>
+          <p class="ds-card-text" data-i18n="about.teams_prato">Yarn expertise, luxury spinning mills relations, fine
+            Italian wool and cashmere sourcing.</p>
+        </div>
+        <div class="ds-card">
+          <div
+            style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">
+            CHINA</div>
+          <h3 class="ds-card-title">Shanghai</h3>
+          <p class="ds-card-text" data-i18n="about.teams_shanghai">Fiber sourcing, chemical compliance, specialty trims
+            and Asian spinning network coordination.</p>
+        </div>
+        <div class="ds-card">
+          <div
+            style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">
+            JAPAN</div>
+          <h3 class="ds-card-title">Tokyo</h3>
+          <p class="ds-card-text" data-i18n="about.teams_tokyo">Design refinement, tech-pack localization and premium
+            Japanese market brand partnerships.</p>
+        </div>
+        <div class="ds-card">
+          <div
+            style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">
+            BANGLADESH</div>
+          <h3 class="ds-card-title">Dhaka</h3>
+          <p class="ds-card-text" data-i18n="about.teams_dhaka">Manufacturing headquarters, bulk production
+            coordination, testing labs and logistic dispatch.</p>
+        </div>
+      </div>
+
+      <div class="ds-divider"></div>
+
+      <div style="margin-top: 40px;">
+        <div class="ds-eyebrow" data-i18n="about.teams_why">Why It Matters</div>
+        <div class="ds-grid-2">
+          <div class="ds-card">
+            <h4 class="ds-card-title" data-i18n="about.teams_closer_title">Closer Communication</h4>
+            <p class="ds-card-text" data-i18n="about.teams_closer_text">Direct in-market access to creative teams in
+              Barcelona, Prato and Tokyo eliminates friction and time-zone delays.</p>
+          </div>
+          <div class="ds-card">
+            <h4 class="ds-card-title" data-i18n="about.teams_faster_title">Faster Development Cycles</h4>
+            <p class="ds-card-text" data-i18n="about.teams_faster_text">Regional oversight drastically trims lead times
+              between first swatch and finalized showroom collections.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PRODUCTION & CONTROL -->
+  <!-- ============================================================ -->
+  <section id="production" class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <div class="ds-eyebrow" data-i18n="about.production_title">Production &amp; Control</div>
+        <h2 class="ds-h2" data-i18n="about.production_heading">Production with control, not just capacity</h2>
+        <p class="ds-lead" data-i18n="about.production_text_1">We operate our own state-of-the-art facility in
+          Bangladesh, ASDWA Fashion Ltd., ensuring absolute accountability over yarn lot consistency, gauge precision
+          and worker welfare.</p>
+      </div>
+
+      <div class="ds-grid-3">
+        <div class="ds-card">
+          <h4 class="ds-card-title" data-i18n="about.production_cap_1">Own Production Facility</h4>
+          <p class="ds-card-text" data-i18n="about.production_cap_1_text">ASDWA Fashion Ltd. acts as our operational
+            bedrock, avoiding subcontracting risks and ensuring complete transparency.</p>
+        </div>
+        <div class="ds-card">
+          <h4 class="ds-card-title" data-i18n="about.production_cap_2">On-site Quality Control</h4>
+          <p class="ds-card-text" data-i18n="about.production_cap_2_text">Dedicated quality inspection teams monitor
+            100% of knitting, linking, washing, and steam finish stages.</p>
+        </div>
+        <div class="ds-card">
+          <h4 class="ds-card-title" data-i18n="about.production_cap_3">Structured Workflows</h4>
+          <p class="ds-card-text" data-i18n="about.production_cap_3_text">Transparent barcode-tracked batches ensure
+            repeatable tension and dimensional standards across seasonal repeats.</p>
+        </div>
+        <div class="ds-card">
+          <h4 class="ds-card-title" data-i18n="about.production_cap_4">Multi-Gauge Capabilities</h4>
+          <p class="ds-card-text" data-i18n="about.production_cap_4_text">Precision knitting covering 3GG chunky knits,
+            5GG, 7GG mid-weights, up to 12GG and 14GG ultra-fine merino.</p>
+        </div>
+        <div class="ds-card">
+          <h4 class="ds-card-title" data-i18n="about.production_cap_5">Flexible Production Planning</h4>
+          <p class="ds-card-text" data-i18n="about.production_cap_5_text">Intelligent scheduling built to adapt
+            seamlessly to fast-fashion drops and peak seasonal delivery spikes.</p>
+        </div>
+        <div class="ds-card">
+          <h4 class="ds-card-title" data-i18n="about.production_cap_6">Scalable Capacity Model</h4>
+          <p class="ds-card-text" data-i18n="about.production_cap_6_text">Capable of scaling over 600,000 units monthly
+            with zero compromise on craftsmanship or delivery reliability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CONTACT SECTION -->
+  <!-- ============================================================ -->
+  <section id="contact" class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <div class="ds-eyebrow" data-i18n="contact.tag">Direct Inquiries</div>
+        <h2 class="ds-h2">Initiate your next collection with Fashion Comfort</h2>
+        <p class="ds-lead">Contact our global headquarters or send a direct inquiry to one of our regional development
+          hubs.</p>
+      </div>
+
+      <div class="ds-grid-2" style="align-items: flex-start; gap: 48px;">
+        <!-- Left: Form -->
+        <div class="ds-card" style="box-shadow: var(--shadow-md);">
+          <div id="office-banner"
+            style="display:none;margin-bottom:20px;padding:12px 16px;background:var(--bg-stone);border:1px solid var(--gold);border-radius:var(--radius-xs);font-size:13px;color:var(--primary);">
+          </div>
+
+          <form id="contact-form" action="https://formspree.io/f/mwvwqlno" method="POST">
+            <input type="hidden" id="form-subject" name="_subject" value="New inquiry from fashioncomfort.com">
+            <input type="hidden" id="office-input" name="office" value="General">
+
+            <div class="ds-form-group">
+              <label class="ds-label" data-i18n="contact.form_name">Your Name</label>
+              <input type="text" name="name" class="ds-input" required placeholder="Full Name">
+            </div>
+
+            <div class="ds-form-group">
+              <label class="ds-label" data-i18n="contact.form_email">Corporate Email</label>
+              <input type="email" name="_replyto" class="ds-input" required placeholder="email@brand.com">
+            </div>
+
+            <div class="ds-form-group">
+              <label class="ds-label" data-i18n="contact.form_company">Brand / Company</label>
+              <input type="text" name="company" class="ds-input" placeholder="e.g. Zara, Mango, Brand Name">
+            </div>
+
+            <div class="ds-form-group">
+              <label class="ds-label" data-i18n="contact.form_message">Project Details</label>
+              <textarea name="message" class="ds-textarea" required
+                placeholder="Provide details on gauges, volume, timeline, and yarn specifications..."></textarea>
+            </div>
+
+            <button type="submit" class="ds-btn ds-btn--gold" style="width:100%;" data-i18n="contact.form_send">Send
+              Inquiry →</button>
+          </form>
+        </div>
+
+        <!-- Right: Global Offices Hubs -->
+        <div>
+          <h3 class="ds-h3" style="margin-bottom: 24px;">Global Development Hubs</h3>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+
+            <div class="ds-card" data-contact="bcn" style="padding: 24px;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div
+                    style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;">
+                    SPAIN (EUROPE HQ)</div>
+                  <h4 style="font-size:17px;font-weight:600;margin:4px 0;">Barcelona Office</h4>
+                  <p style="font-size:13px;color:var(--text-secondary);">Fashion Comfort Europe S.L. &bull; Fran Raya
+                  </p>
+                  <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">C/ Narcís Monturiol 48, Vilassar de
+                    Mar, Barcelona</p>
+                </div>
+                <button type="button" class="ds-btn ds-btn--ghost ds-btn--pill" style="padding:7px 16px;font-size:11px;"
+                  onclick="contactOffice(this, 'Barcelona')">Contact</button>
+              </div>
+            </div>
+
+            <div class="ds-card" data-contact="dhaka" style="padding: 24px;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div
+                    style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;">
+                    BANGLADESH (PRODUCTION HQ)</div>
+                  <h4 style="font-size:17px;font-weight:600;margin:4px 0;">Dhaka Office &amp; ASDWA Factory</h4>
+                  <p style="font-size:13px;color:var(--text-secondary);">Fashion Comfort (BD) Ltd. &bull; Afzalur Rahman
+                  </p>
+                  <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">House 198/A, Road 1, New DOHS,
+                    Mohakhali, Dhaka</p>
+                </div>
+                <button type="button" class="ds-btn ds-btn--ghost ds-btn--pill" style="padding:7px 16px;font-size:11px;"
+                  onclick="contactOffice(this, 'Dhaka')">Contact</button>
+              </div>
+            </div>
+
+            <div class="ds-card" data-contact="tokyo" style="padding: 24px;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div
+                    style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;">
+                    JAPAN</div>
+                  <h4 style="font-size:17px;font-weight:600;margin:4px 0;">Tokyo Studio</h4>
+                  <p style="font-size:13px;color:var(--text-secondary);">Fashion Comfort Studio Japan &bull; Mitsuhiro
+                    Kusumoto</p>
+                  <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Minami Aoyama BLD, Minato-ku, Tokyo
+                    107-0062</p>
+                </div>
+                <button type="button" class="ds-btn ds-btn--ghost ds-btn--pill" style="padding:7px 16px;font-size:11px;"
+                  onclick="contactOffice(this, 'Tokyo')">Contact</button>
+              </div>
+            </div>
+
+            <div class="ds-card" data-contact="italy" style="padding: 24px;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div
+                    style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;">
+                    ITALY</div>
+                  <h4 style="font-size:17px;font-weight:600;margin:4px 0;">Prato Yarn Office</h4>
+                  <p style="font-size:13px;color:var(--text-secondary);">FC Italy Yarn Studio &bull; Marco Bertini</p>
+                  <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Direct connection to Italian
+                    spinners &amp; yarn sourcing</p>
+                </div>
+                <button type="button" class="ds-btn ds-btn--ghost ds-btn--pill" style="padding:7px 16px;font-size:11px;"
+                  onclick="contactOffice(this, 'Prato')">Contact</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- UNIVERSAL MASTER FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="ds-footer">
+    <div class="ds-footer-inner">
+      <div class="ds-footer-brand">
+        <p class="ds-footer-logo">Fashion Comfort</p>
+        <p class="ds-footer-tagline" data-i18n="footer.tagline">European &amp; international knitwear manufacturing
+          partner established since 2002. Combining creative development with in-house industrial production.</p>
+        <div class="ds-footer-badges">
+          <span class="ds-footer-badge">GOTS Certified</span>
+          <span class="ds-footer-badge">GRS Recycled</span>
+          <span class="ds-footer-badge">RWS Wool</span>
+          <span class="ds-footer-badge">OEKO-TEX</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_quick_links">Quick Navigation</h4>
+        <ul class="ds-footer-links">
+          <li><a href="index.html" data-i18n="common.footer_home">Home</a></li>
+          <li><a href="#about" data-i18n="common.footer_about">About Us</a></li>
+          <li><a href="products.html" data-i18n="nav.products">Selected Products</a></li>
+          <li><a href="manufacturing.html" data-i18n="nav.manufacturing">Manufacturing Facility</a></li>
+          <li><a href="responsibility.html" data-i18n="nav.responsibility">Responsibility &amp; ESG</a></li>
+          <li><a href="our-history.html" data-i18n="nav.history">Our History</a></li>
+          <li><a href="lyk.html" data-i18n="nav.lyk">LYK Circular Project</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading">Capabilities</h4>
+        <ul class="ds-footer-links">
+          <li><a href="manufacturing.html">3GG - 14GG Knitting</a></li>
+          <li><a href="manufacturing.html">72h Sample Turnaround</a></li>
+          <li><a href="responsibility.html">Organic &amp; Recycled Yarns</a></li>
+          <li><a href="lyk.html">Regenerated Fiber Spinning</a></li>
+          <li><a href="#contact">Direct Factory Access</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_contact_title">Contact &amp; Connect</h4>
+        <ul class="ds-footer-links">
+          <li><a href="mailto:info@fashioncomfort.com">info@fashioncomfort.com</a></li>
+          <li><a href="https://linkedin.com/company/fashion-comfort-group" target="_blank" rel="noopener">LinkedIn
+              Profile ↗</a></li>
+          <li><a href="https://instagram.com/fashioncomfortgroup" target="_blank" rel="noopener">Instagram Archive ↗</a>
+          </li>
+          <li><a href="#contact" style="color:var(--gold-light);font-weight:600;">Get in Touch →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <p data-i18n="footer.copyright">© 2026 Fashion Comfort Group. All rights reserved.</p>
+      <a href="#hero" class="ds-back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script>
+    function contactOffice(btn, officeName) {
+      const officeInput = document.getElementById('office-input');
+      const subjectInput = document.getElementById('form-subject');
+      const banner = document.getElementById('office-banner');
+      const form = document.getElementById('contact-form');
+
+      if (officeInput) officeInput.value = officeName;
+      if (subjectInput) subjectInput.value = `New inquiry for ${officeName} Office`;
+
+      if (banner) {
+        banner.innerHTML = `Directing inquiry to <strong>${officeName} Office</strong>`;
+        banner.style.display = 'block';
+      }
+
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  </script>
+</body>
+
+</html>

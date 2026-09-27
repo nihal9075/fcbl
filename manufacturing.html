@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manufacturing Facility | Fashion Comfort Group</title>
+  <meta name="description" content="ASDWA Fashion Ltd. — our state-of-the-art knitwear manufacturing facility with 553 flat knitting machines, 2,500+ artisans, and European quality control.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    .mfg-hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px var(--content-padding) 80px;
+      background: linear-gradient(135deg, rgba(11, 19, 12, 0.85) 0%, rgba(21, 34, 23, 0.75) 100%), url('images/exterior-fabrica.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .mfg-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .mfg-stats-ribbon {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: var(--max-width);
+      width: 100%;
+    }
+
+    .mfg-stat-box {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .mfg-stat-box:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .mfg-stat-val {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.2vw, 42px);
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .mfg-stat-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .mfg-img-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+      background: var(--bg-stone);
+    }
+
+    .mfg-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .mfg-img-card:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 992px) {
+      .mfg-stats-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .mfg-stats-ribbon {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- ============================================================ -->
+  <!-- NAVIGATION -->
+  <!-- ============================================================ -->
+  <nav class="ds-nav static" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo-wrap">
+        <span class="ds-nav-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9" stroke="var(--gold)" stroke-width="1.3"/>
+            <path d="M7 12c1.4-2.4 3.2-3 5-3s3.6.6 5 3c-1.4 2.4-3.2 3-5 3s-3.6-.6-5-3z" stroke="var(--gold)" stroke-width="1.3"/>
+            <circle cx="12" cy="12" r="1.8" fill="var(--gold)"/>
+          </svg>
+        </span>
+        <span class="ds-nav-logo">Fashion Comfort <span class="ds-logo-sub">GROUP</span></span>
+      </a>
+      <ul class="ds-nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About Us</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link active" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Responsibility</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Project</a></li>
+        <li><a href="index.html#contact" class="ds-nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="ds-nav-actions">
+        <a href="index.html#contact" class="ds-nav-cta">Inquire <span>→</span></a>
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">
+            <span class="lang-flag"><svg viewBox="0 0 60 30"><clipPath id="sm_en"><circle cx="30" cy="15" r="15"></circle></clipPath><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#sm_en)"></path><path d="M30,0V30 M0,15H60" stroke="#fff" stroke-width="10"></path><path d="M30,0V30 M0,15H60" stroke="#C8102E" stroke-width="6"></path></svg></span>
+            <span class="lang-code">EN</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">
+            <span class="lang-flag"><svg viewBox="0 0 6 4"><rect width="6" height="4" fill="#c60b1e"></rect><rect y="1" width="6" height="2" fill="#ffc400"></rect></svg></span>
+            <span class="lang-code">ES</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">
+            <span class="lang-flag"><svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff"></rect><circle cx="30" cy="20" r="12" fill="#bc002d"></circle></svg></span>
+            <span class="lang-code">JA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO SECTION -->
+  <!-- ============================================================ -->
+  <header class="mfg-hero">
+    <div class="mfg-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white" data-i18n="manufacturing.hero_tag">Industrial Infrastructure</div>
+      <h1 class="ds-h1" style="color:white;" data-i18n-html="manufacturing.hero_title">Production with control,<br><em>not just capacity</em></h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.85);margin:0 auto 24px;" data-i18n="manufacturing.hero_sub">Our manufacturing facility, ASDWA Fashion Ltd., is the operational core of Fashion Comfort Group.</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.7);max-width:680px;margin:0 auto;" data-i18n="manufacturing.hero_text">This structure gives us direct oversight over yarn feeding, tension calibration, linking, eco-finishing, and delivery times across every collection.</p>
+
+      <div class="mfg-stats-ribbon">
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">553</div>
+          <div class="mfg-stat-lbl" data-i18n="manufacturing.cap_2_title">Computerized Machines</div>
+        </div>
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">2,500+</div>
+          <div class="mfg-stat-lbl" data-i18n="manufacturing.cap_3_title">Skilled Workforce</div>
+        </div>
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">3M+</div>
+          <div class="mfg-stat-lbl" data-i18n="manufacturing.cap_1_title">Annual Garment Output</div>
+        </div>
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">3 - 14</div>
+          <div class="mfg-stat-lbl">Gauges Covered (GG)</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- INTEGRATED OVERVIEW -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-grid-2">
+        <div>
+          <div class="ds-eyebrow" data-i18n="manufacturing.overview_tag">Overview</div>
+          <h2 class="ds-h2" data-i18n="manufacturing.overview_title">Integrated knitwear manufacturing</h2>
+          <p class="ds-lead" style="margin-bottom:20px;" data-i18n="manufacturing.overview_text">We operate a fully integrated knitwear production ecosystem in Bangladesh, combining advanced German and Japanese computerized machinery with rigorous European technical management.</p>
+          <p class="ds-body">Every order is manufactured in-house from cone winding and gauge setup to automated linking and garment-dyeing. This structure eliminates subcontracting variance and guarantees on-time delivery for seasonal fast-fashion calendars.</p>
+          
+          <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="ds-footer-badge" style="background:var(--bg-stone);border-color:var(--border);color:var(--primary);">No Subcontracting</span>
+            <span class="ds-footer-badge" style="background:var(--bg-stone);border-color:var(--border);color:var(--primary);">100% In-house Quality Control</span>
+            <span class="ds-footer-badge" style="background:var(--bg-stone);border-color:var(--border);color:var(--primary);">AQL 1.5 Inspection</span>
+          </div>
+        </div>
+
+        <div class="mfg-img-card">
+          <img src="images/Factory-Interior-Production-floor.jpg" alt="ASDWA Fashion Ltd. Main Production Floor">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SCALE & CAPACITY CARDS -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-section-header">
+        <div class="ds-eyebrow" data-i18n="manufacturing.capacity_tag">Industrial Scale</div>
+        <h2 class="ds-h2" data-i18n="manufacturing.capacity_title">Structure, capacity &amp; scale</h2>
+        <p class="ds-lead">Built to deliver massive seasonal volume without sacrificing the tactile nuance of luxury knitwear.</p>
+      </div>
+
+      <div class="ds-grid-3">
+        <div class="ds-card">
+          <div class="ds-card-icon">⚡</div>
+          <h4 class="ds-card-title" data-i18n="manufacturing.cap_1_title">Production Capacity</h4>
+          <p class="ds-card-text" data-i18n="manufacturing.cap_1_text">Over 3 million pieces annually across men's, women's, kids', and baby knitwear categories.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">⚙️</div>
+          <h4 class="ds-card-title" data-i18n="manufacturing.cap_2_title">Computerized Machinery</h4>
+          <p class="ds-card-text" data-i18n="manufacturing.cap_2_text">553 computerized flat knitting machines covering fine 14GG down to chunky 3GG constructions.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">👥</div>
+          <h4 class="ds-card-title" data-i18n="manufacturing.cap_3_title">Dedicated Workforce</h4>
+          <p class="ds-card-text" data-i18n="manufacturing.cap_3_text">2,500+ trained technicians, linking operators, wash specialists, and textile engineers.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">🧶</div>
+          <h4 class="ds-card-title" data-i18n="manufacturing.cap_4_title">Product Spectrum</h4>
+          <p class="ds-card-text" data-i18n="manufacturing.cap_4_text">Crewnecks, cardigans, mock-necks, intarsia patterns, ribbed polos, hooded sweaters, and knitted sets.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">⏱️</div>
+          <h4 class="ds-card-title" data-i18n="manufacturing.cap_5_title">Disciplined Lead Times</h4>
+          <p class="ds-card-text" data-i18n="manufacturing.cap_5_text">Flexible planning workflows synchronized with client shipping schedules and replenishment triggers.</p>
+        </div>
+        <div class="ds-card">
+          <div class="ds-card-icon">🔄</div>
+          <h4 class="ds-card-title" data-i18n="manufacturing.cap_6_title">Integrated Prototyping</h4>
+          <p class="ds-card-text" data-i18n="manufacturing.cap_6_text">Direct digital link between our dedicated Sample Home and bulk knitting lines ensures exact replication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- MACHINERY & TECHNOLOGY -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-grid-2">
+        <div class="mfg-img-card">
+          <img src="images/Knitting-machines-Close-up%20detail.jpg" alt="High-tech Computerized Knitting Machines Detail">
+        </div>
+
+        <div>
+          <div class="ds-eyebrow" data-i18n="manufacturing.tech_tag">Engineering Precision</div>
+          <h2 class="ds-h2" data-i18n="manufacturing.tech_title">Advanced machinery &amp; technology</h2>
+          <p class="ds-lead" style="margin-bottom:24px;" data-i18n="manufacturing.tech_text">Our facilities are equipped with industry-leading Stoll and Shima Seiki electronic machines, enabling complex structures, multi-color jacquards, and intricate stitch transfers.</p>
+          
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="padding:14px 18px;background:var(--bg-stone);border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <strong style="color:var(--primary);font-size:14px;display:block;margin-bottom:2px;" data-i18n="manufacturing.tech_1">Multi-Gauge Knitting (3GG – 14GG)</strong>
+              <span style="font-size:13px;color:var(--text-secondary);">From heavy winter cables and brioche ribs to featherweight summer merino.</span>
+            </div>
+            <div style="padding:14px 18px;background:var(--bg-stone);border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <strong style="color:var(--primary);font-size:14px;display:block;margin-bottom:2px;" data-i18n="manufacturing.tech_2">Jacquard &amp; 3D Structure Development</strong>
+              <span style="font-size:13px;color:var(--text-secondary);">Complex placements, intarsia, waffle structures, pointelle, and custom ribs.</span>
+            </div>
+            <div style="padding:14px 18px;background:var(--bg-stone);border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <strong style="color:var(--primary);font-size:14px;display:block;margin-bottom:2px;" data-i18n="manufacturing.tech_3">Gentle Eco-Washing &amp; Softening</strong>
+              <span style="font-size:13px;color:var(--text-secondary);">Automated wet processing ensuring cashmere handle without dimensional shrinkage.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- QUALITY CONTROL PROCESS -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--dark">
+    <div class="ds-container">
+      <div class="ds-section-header text-center">
+        <div class="ds-eyebrow ds-eyebrow--white" data-i18n="manufacturing.quality_tag">Zero-Defect Philosophy</div>
+        <h2 class="ds-h2" style="color:white;" data-i18n="manufacturing.quality_title">Quality control &amp; consistency</h2>
+        <p class="ds-lead" style="color:rgba(255,255,255,0.75);" data-i18n="manufacturing.quality_text">Quality is systematically integrated into every phase of our operations, from raw yarn cone intake to container loading.</p>
+      </div>
+
+      <div class="ds-grid-3">
+        <div class="ds-card ds-card--dark">
+          <div style="font-family:var(--font-mono);font-size:12px;color:var(--gold);margin-bottom:8px;">STAGE 01</div>
+          <h4 class="ds-card-title" data-i18n="manufacturing.quality_1_title">Inward Yarn Testing</h4>
+          <p class="ds-card-text" data-i18n="manufacturing.quality_1_text">Laboratory inspection of yarn count, tensile strength, twist per inch, and shade lot continuity.</p>
+        </div>
+        <div class="ds-card ds-card--dark">
+          <div style="font-family:var(--font-mono);font-size:12px;color:var(--gold);margin-bottom:8px;">STAGE 02</div>
+          <h4 class="ds-card-title">Panel-by-Panel Inspection</h4>
+          <p class="ds-card-text">Every knitted body and sleeve panel is light-table inspected for dropped stitches or tension variance before linking.</p>
+        </div>
+        <div class="ds-card ds-card--dark">
+          <div style="font-family:var(--font-mono);font-size:12px;color:var(--gold);margin-bottom:8px;">STAGE 03</div>
+          <h4 class="ds-card-title">Precision Linking</h4>
+          <p class="ds-card-text">Skilled seamstresses hand-link collars, cuffs, and side seams with exact pitch alignment.</p>
+        </div>
+        <div class="ds-card ds-card--dark">
+          <div style="font-family:var(--font-mono);font-size:12px;color:var(--gold);margin-bottom:8px;">STAGE 04</div>
+          <h4 class="ds-card-title">Wash &amp; Shrinkage Audit</h4>
+          <p class="ds-card-text">Controlled washing, tumbling, and measurement tests to verify zero skewing and standard hand-feel.</p>
+        </div>
+        <div class="ds-card ds-card--dark">
+          <div style="font-family:var(--font-mono);font-size:12px;color:var(--gold);margin-bottom:8px;">STAGE 05</div>
+          <h4 class="ds-card-title">Dual Needle Detection</h4>
+          <p class="ds-card-text">Mandatory 9-point conveyor metal detection on all garments to meet strict European baby &amp; child safety rules.</p>
+        </div>
+        <div class="ds-card ds-card--dark">
+          <div style="font-family:var(--font-mono);font-size:12px;color:var(--gold);margin-bottom:8px;">STAGE 06</div>
+          <h4 class="ds-card-title">Final AQL 1.5 Audit</h4>
+          <p class="ds-card-text">Independent QA team performs full AQL random sampling on packed cartons before export sign-off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WORKFORCE & HUMAN COMMITMENT -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-grid-2">
+        <div>
+          <div class="ds-eyebrow">Human-Centered Operations</div>
+          <h2 class="ds-h2">Artisanship supported by modern, safe working environments</h2>
+          <p class="ds-lead" style="margin-bottom:20px;">We believe true luxury manufacturing is inseparable from worker dignity, safety, and sustainable community investment.</p>
+          <p class="ds-body">Our ASDWA facility is fully air-ventilated, well-lit, and equipped with on-site professional healthcare, childcare daycare, fair compensation, and regular technical advancement workshops.</p>
+          
+          <div style="margin-top:28px;">
+            <a href="responsibility.html" class="ds-btn ds-btn--primary ds-btn--pill">Explore Social Responsibility →</a>
+          </div>
+        </div>
+
+        <div class="mfg-img-card">
+          <img src="images/Production-line-Workers-machinery.jpg" alt="Production line workers and technicians at ASDWA Fashion Ltd.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WORK WITH US CTA -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white" style="text-align:center;">
+    <div class="ds-container-narrow">
+      <div class="ds-eyebrow">READY TO SCALE YOUR PROGRAM</div>
+      <h2 class="ds-h2" data-i18n="manufacturing.cta_title">Work With Us</h2>
+      <p class="ds-lead" style="margin:0 auto 36px;" data-i18n="manufacturing.cta_text">Partner with a team that values quality, control, verified sustainability standards, and long-term reliability.</p>
+      <a href="index.html#contact" class="ds-btn ds-btn--gold ds-btn--pill" data-i18n="manufacturing.cta_btn">Contact Our Team →</a>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="ds-footer">
+    <div class="ds-footer-inner">
+      <div class="ds-footer-brand">
+        <p class="ds-footer-logo">Fashion Comfort</p>
+        <p class="ds-footer-tagline" data-i18n="footer.tagline">European &amp; international knitwear manufacturing partner established since 2002. Combining creative development with in-house industrial production.</p>
+        <div class="ds-footer-badges">
+          <span class="ds-footer-badge">GOTS Certified</span>
+          <span class="ds-footer-badge">GRS Recycled</span>
+          <span class="ds-footer-badge">RWS Wool</span>
+          <span class="ds-footer-badge">OEKO-TEX</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_quick_links">Quick Navigation</h4>
+        <ul class="ds-footer-links">
+          <li><a href="index.html" data-i18n="common.footer_home">Home</a></li>
+          <li><a href="index.html#about" data-i18n="common.footer_about">About Us</a></li>
+          <li><a href="products.html" data-i18n="nav.products">Selected Products</a></li>
+          <li><a href="manufacturing.html" data-i18n="nav.manufacturing">Manufacturing Facility</a></li>
+          <li><a href="responsibility.html" data-i18n="nav.responsibility">Responsibility &amp; ESG</a></li>
+          <li><a href="our-history.html" data-i18n="nav.history">Our History</a></li>
+          <li><a href="lyk.html" data-i18n="nav.lyk">LYK Circular Project</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading">Capabilities</h4>
+        <ul class="ds-footer-links">
+          <li><a href="manufacturing.html">3GG - 14GG Knitting</a></li>
+          <li><a href="manufacturing.html">72h Sample Turnaround</a></li>
+          <li><a href="responsibility.html">Organic &amp; Recycled Yarns</a></li>
+          <li><a href="lyk.html">Regenerated Fiber Spinning</a></li>
+          <li><a href="index.html#contact">Direct Factory Access</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_contact_title">Contact &amp; Connect</h4>
+        <ul class="ds-footer-links">
+          <li><a href="mailto:info@fashioncomfort.com">info@fashioncomfort.com</a></li>
+          <li><a href="https://linkedin.com/company/fashion-comfort-group" target="_blank" rel="noopener">LinkedIn Profile ↗</a></li>
+          <li><a href="https://instagram.com/fashioncomfortgroup" target="_blank" rel="noopener">Instagram Archive ↗</a></li>
+          <li><a href="index.html#contact" style="color:var(--gold-light);font-weight:600;">Get in Touch →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <p data-i18n="footer.copyright">© 2026 Fashion Comfort Group. All rights reserved.</p>
+      <a href="#navbar" class="ds-back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+</body>
+</html>

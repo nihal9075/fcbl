@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsibility &amp; ESG | Fashion Comfort Group</title>
+  <meta name="description" content="Environmental impact, certified materials, worker welfare, and social responsibility at Fashion Comfort Group. GOTS, GRS, RCS, and RWS certified.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    .resp-hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px var(--content-padding) 80px;
+      background: linear-gradient(135deg, rgba(9, 19, 10, 0.90) 0%, rgba(21, 34, 23, 0.82) 100%), url('images/factory-environment.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .resp-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .impact-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .impact-metric-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 24px 16px;
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .impact-metric-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .impact-metric-val {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .impact-metric-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .resp-media-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+      background: var(--bg-stone);
+    }
+
+    .resp-media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .resp-media-card:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 992px) {
+      .impact-metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .impact-metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- ============================================================ -->
+  <!-- NAVIGATION -->
+  <!-- ============================================================ -->
+  <nav class="ds-nav static" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo-wrap">
+        <span class="ds-nav-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9" stroke="var(--gold)" stroke-width="1.3"/>
+            <path d="M7 12c1.4-2.4 3.2-3 5-3s3.6.6 5 3c-1.4 2.4-3.2 3-5 3s-3.6-.6-5-3z" stroke="var(--gold)" stroke-width="1.3"/>
+            <circle cx="12" cy="12" r="1.8" fill="var(--gold)"/>
+          </svg>
+        </span>
+        <span class="ds-nav-logo">Fashion Comfort <span class="ds-logo-sub">GROUP</span></span>
+      </a>
+      <ul class="ds-nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About Us</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link active" data-i18n="nav.responsibility">Responsibility</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Project</a></li>
+        <li><a href="index.html#contact" class="ds-nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="ds-nav-actions">
+        <a href="index.html#contact" class="ds-nav-cta">Inquire <span>→</span></a>
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">
+            <span class="lang-flag"><svg viewBox="0 0 60 30"><clipPath id="sr_en"><circle cx="30" cy="15" r="15"></circle></clipPath><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#sr_en)"></path><path d="M30,0V30 M0,15H60" stroke="#fff" stroke-width="10"></path><path d="M30,0V30 M0,15H60" stroke="#C8102E" stroke-width="6"></path></svg></span>
+            <span class="lang-code">EN</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">
+            <span class="lang-flag"><svg viewBox="0 0 6 4"><rect width="6" height="4" fill="#c60b1e"></rect><rect y="1" width="6" height="2" fill="#ffc400"></rect></svg></span>
+            <span class="lang-code">ES</span>
+          </button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">
+            <span class="lang-flag"><svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff"></rect><circle cx="30" cy="20" r="12" fill="#bc002d"></circle></svg></span>
+            <span class="lang-code">JA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO SECTION -->
+  <!-- ============================================================ -->
+  <header class="resp-hero">
+    <div class="resp-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white" data-i18n="responsibility.hero_tag">Sustainability &amp; ESG Commitment</div>
+      <h1 class="ds-h1" style="color:white;" data-i18n="responsibility.hero_title">A responsible approach to modern knitwear</h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.85);margin:0 auto 28px;">We believe true manufacturing leadership requires verifiable environmental stewardship, fair worker empowerment, and transparent material traceability.</p>
+      
+      <div class="impact-metric-grid">
+        <div class="impact-metric-card">
+          <div class="impact-metric-val">100%</div>
+          <div class="impact-metric-lbl">Traceable Supply Chain</div>
+        </div>
+        <div class="impact-metric-card">
+          <div class="impact-metric-val">4+</div>
+          <div class="impact-metric-lbl">Global ESG Certifications</div>
+        </div>
+        <div class="impact-metric-card">
+          <div class="impact-metric-val">2,500+</div>
+          <div class="impact-metric-lbl">Beneficiaries of Medical Care</div>
+        </div>
+        <div class="impact-metric-card">
+          <div class="impact-metric-val">0%</div>
+          <div class="impact-metric-lbl">Hazardous Effluents</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- CERTIFICATIONS SECTION -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-section-header text-center">
+        <div class="ds-eyebrow">VERIFIED ACCREDITATIONS</div>
+        <h2 class="ds-h2">Global environmental &amp; quality standards</h2>
+        <p class="ds-lead">Our manufacturing facilities and yarn supply chains undergo rigorous independent annual third-party audits.</p>
+      </div>
+
+      <div class="cert-grid">
+        <!-- GOTS -->
+        <div class="cert-card">
+          <div class="cert-logo-wrap">
+            <img src="images/gots-vector-logo.png" alt="Global Organic Textile Standard Logo">
+          </div>
+          <h4 class="cert-title">GOTS Certified</h4>
+          <span class="cert-code">CU 884729 / Organic Cotton</span>
+          <p style="font-size:12px;color:var(--text-secondary);margin-top:8px;">Ensures organic status of textiles from harvesting of raw materials through environmentally and socially responsible manufacturing.</p>
+        </div>
+
+        <!-- GRS -->
+        <div class="cert-card">
+          <div class="cert-logo-wrap">
+            <img src="images/GRS-logo%20copia.png" alt="Global Recycled Standard Logo">
+          </div>
+          <h4 class="cert-title">GRS Certified</h4>
+          <span class="cert-code">Global Recycled Standard</span>
+          <p style="font-size:12px;color:var(--text-secondary);margin-top:8px;">Verifies recycled content across cotton, wool and polyester while tracking chemical management and ethical labor standards.</p>
+        </div>
+
+        <!-- RCS -->
+        <div class="cert-card">
+          <div class="cert-logo-wrap">
+            <img src="images/recycled-blended-claim-standard-logo-png_seeklogo-490361.png" alt="Recycled Claim Standard Logo">
+          </div>
+          <h4 class="cert-title">RCS Certified</h4>
+          <span class="cert-code">Recycled Claim Standard</span>
+          <p style="font-size:12px;color:var(--text-secondary);margin-top:8px;">Provides third-party chain-of-custody verification of recycled raw materials through every spinning and knitting transition.</p>
+        </div>
+
+        <!-- RWS -->
+        <div class="cert-card">
+          <div class="cert-logo-wrap">
+            <img src="images/responsible-wool-standard-rws-logo-vector.png" alt="Responsible Wool Standard Logo">
+          </div>
+          <h4 class="cert-title">RWS Certified</h4>
+          <span class="cert-code">Responsible Wool Standard</span>
+          <p style="font-size:12px;color:var(--text-secondary);margin-top:8px;">Guarantees that wool comes from farms with a progressive approach to managing land and animal welfare (strictly non-mulesed).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PILLAR 1: ENVIRONMENTAL EXCELLENCE -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-grid-2">
+        <div>
+          <div class="ds-eyebrow">ENVIRONMENTAL RESPONSIBILITY</div>
+          <h2 class="ds-h2">Cleaner production, renewable energy, and circularity</h2>
+          <p class="ds-lead" style="margin-bottom:20px;">We actively minimize our carbon footprint, water usage, and textile waste across all stages of yarn handling and garment finishing.</p>
+          
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div class="ds-card" style="padding:20px;">
+              <h4 style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:4px;">Rooftop Solar Renewable Energy</h4>
+              <p style="font-size:13px;color:var(--text-secondary);">Solar installations supply daytime clean energy to our ASDWA facility, reducing grid reliance.</p>
+            </div>
+            <div class="ds-card" style="padding:20px;">
+              <h4 style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:4px;">Water Recycling &amp; Eco-Finishing</h4>
+              <p style="font-size:13px;color:var(--text-secondary);">Closed-loop washing systems filter and recycle process water, eliminating harmful chemical effluents.</p>
+            </div>
+            <div class="ds-card" style="padding:20px;">
+              <h4 style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:4px;">Pre-Consumer Fiber Recovery (LYK)</h4>
+              <p style="font-size:13px;color:var(--text-secondary);">100% of our clean fabric clippings and yarn residues are reclaimed into regenerated yarns via our LYK platform.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="resp-media-card">
+          <img src="images/factory-environment.jpg" alt="Sustainable green environment around Fashion Comfort factory">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PILLAR 2: WORKER HEALTHCARE & WELLBEING -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-grid-2">
+        <div class="resp-media-card">
+          <img src="images/child-care-medical-suport.jpg" alt="On-site medical clinic and childcare support at Fashion Comfort facility">
+        </div>
+
+        <div>
+          <div class="ds-eyebrow">SOCIAL RESPONSIBILITY</div>
+          <h2 class="ds-h2">Empowering the people behind the craft</h2>
+          <p class="ds-lead" style="margin-bottom:20px;">Our 2,500+ workers are the true core of Fashion Comfort Group. We cultivate an ethical environment that prioritizes healthcare, family support, and professional equity.</p>
+          
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="padding:16px 20px;background:var(--bg-stone);border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <strong style="color:var(--primary);font-size:15px;display:block;margin-bottom:4px;">Free On-Site Healthcare &amp; Medical Clinic</strong>
+              <span style="font-size:13px;color:var(--text-secondary);">Full-time certified physicians and nursing staff provide free clinical consultations, medicines, and prenatal care for workers and their families.</span>
+            </div>
+            <div style="padding:16px 20px;background:var(--bg-stone);border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <strong style="color:var(--primary);font-size:15px;display:block;margin-bottom:4px;">Subsidized Daycare &amp; Child Development Center</strong>
+              <span style="font-size:13px;color:var(--text-secondary);">Safe, hygienic, educational childcare facilities on-site allow working mothers to maintain their careers with peace of mind.</span>
+            </div>
+            <div style="padding:16px 20px;background:var(--bg-stone);border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <strong style="color:var(--primary);font-size:15px;display:block;margin-bottom:4px;">Living Wages &amp; Continuous Skill Training</strong>
+              <span style="font-size:13px;color:var(--text-secondary);">Fair remuneration exceeding national statutory minimums, paired with regular technical upskilling on computerized knitting machinery.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PILLAR 3: COMMUNITY & BIODIVERSITY -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-grid-2">
+        <div>
+          <div class="ds-eyebrow">COMMUNITY &amp; BIODIVERSITY</div>
+          <h2 class="ds-h2">Regenerating ecosystems and local communities</h2>
+          <p class="ds-lead" style="margin-bottom:20px;">We take proactive responsibility for our local environment through community agroforestry, tree plantation campaigns, and educational assistance.</p>
+          <p class="ds-body" style="margin-bottom:24px;">Over 5,000 indigenous trees have been planted across our factory perimeters and local flood-vulnerable zones, enhancing microclimates, sequestering carbon, and creating restorative natural greenery for our team members.</p>
+          
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="ds-footer-badge" style="background:var(--white);border-color:var(--border);color:var(--primary);">5,000+ Trees Planted</span>
+            <span class="ds-footer-badge" style="background:var(--white);border-color:var(--border);color:var(--primary);">Community Health Drives</span>
+            <span class="ds-footer-badge" style="background:var(--white);border-color:var(--border);color:var(--primary);">LEED Platinum Road</span>
+          </div>
+        </div>
+
+        <div class="resp-media-card">
+          <img src="images/Tree-planting-Natural-environment.jpg" alt="Tree planting initiative and natural greenery around Fashion Comfort Group">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WORK WITH A RESPONSIBLE PARTNER CTA -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--dark" style="text-align:center;">
+    <div class="ds-container-narrow">
+      <div class="ds-eyebrow ds-eyebrow--white">TRANSPARENT PARTNERSHIP</div>
+      <h2 class="ds-h2" style="color:white;" data-i18n="responsibility.cta_title">Work with a responsible manufacturing partner</h2>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.75);margin:0 auto 36px;" data-i18n="responsibility.cta_text">We believe responsible manufacturing and commercial performance go hand in hand. Request our full ESG audit dossier or discuss sustainable yarn programs.</p>
+      <a href="index.html#contact" class="ds-btn ds-btn--gold ds-btn--pill">Inquire About Sustainable Programs →</a>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="ds-footer">
+    <div class="ds-footer-inner">
+      <div class="ds-footer-brand">
+        <p class="ds-footer-logo">Fashion Comfort</p>
+        <p class="ds-footer-tagline" data-i18n="footer.tagline">European &amp; international knitwear manufacturing partner established since 2002. Combining creative development with in-house industrial production.</p>
+        <div class="ds-footer-badges">
+          <span class="ds-footer-badge">GOTS Certified</span>
+          <span class="ds-footer-badge">GRS Recycled</span>
+          <span class="ds-footer-badge">RWS Wool</span>
+          <span class="ds-footer-badge">OEKO-TEX</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_quick_links">Quick Navigation</h4>
+        <ul class="ds-footer-links">
+          <li><a href="index.html" data-i18n="common.footer_home">Home</a></li>
+          <li><a href="index.html#about" data-i18n="common.footer_about">About Us</a></li>
+          <li><a href="products.html" data-i18n="nav.products">Selected Products</a></li>
+          <li><a href="manufacturing.html" data-i18n="nav.manufacturing">Manufacturing Facility</a></li>
+          <li><a href="responsibility.html" data-i18n="nav.responsibility">Responsibility &amp; ESG</a></li>
+          <li><a href="our-history.html" data-i18n="nav.history">Our History</a></li>
+          <li><a href="lyk.html" data-i18n="nav.lyk">LYK Circular Project</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading">Capabilities</h4>
+        <ul class="ds-footer-links">
+          <li><a href="manufacturing.html">3GG - 14GG Knitting</a></li>
+          <li><a href="manufacturing.html">72h Sample Turnaround</a></li>
+          <li><a href="responsibility.html">Organic &amp; Recycled Yarns</a></li>
+          <li><a href="lyk.html">Regenerated Fiber Spinning</a></li>
+          <li><a href="index.html#contact">Direct Factory Access</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="ds-footer-heading" data-i18n="common.footer_contact_title">Contact &amp; Connect</h4>
+        <ul class="ds-footer-links">
+          <li><a href="mailto:info@fashioncomfort.com">info@fashioncomfort.com</a></li>
+          <li><a href="https://linkedin.com/company/fashion-comfort-group" target="_blank" rel="noopener">LinkedIn Profile ↗</a></li>
+          <li><a href="https://instagram.com/fashioncomfortgroup" target="_blank" rel="noopener">Instagram Archive ↗</a></li>
+          <li><a href="index.html#contact" style="color:var(--gold-light);font-weight:600;">Get in Touch →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <p data-i18n="footer.copyright">© 2026 Fashion Comfort Group. All rights reserved.</p>
+      <a href="#navbar" class="ds-back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+</body>
+</html>
