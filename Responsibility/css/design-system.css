@@ -350,18 +350,7 @@ button {
 }
 
 .ds-nav-emblem {
-  width: 28px;
-  height: 28px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  flex-shrink: 0;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ds-nav-logo-wrap:hover .ds-nav-emblem {
-  transform: rotate(18deg) scale(1.1);
+  display: none !important;
 }
 
 .ds-nav-logo {
