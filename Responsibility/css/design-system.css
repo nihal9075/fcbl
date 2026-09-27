@@ -46,7 +46,7 @@
   --font-mono: 'SF Mono', Consolas, Monaco, monospace;
 
   /* Layout & Spacing (8px Grid) */
-  --max-width: 1240px;
+  --max-width: 1200px;
   --max-width-narrow: 920px;
   --content-padding: 40px;
   --space-2xs: 4px;
@@ -324,7 +324,7 @@ button {
 
 /* Inner Layout */
 .ds-nav-inner {
-  max-width: 1440px;
+  max-width: var(--max-width, 1200px);
   width: 100%;
   margin: 0 auto;
   padding: 0 clamp(20px, 3.5vw, 44px);
@@ -572,19 +572,83 @@ button {
   background: #0E1810 !important;
 }
 
-@media (max-width: 1100px) {
+/* ------------------------------------------------------------ */
+/* NAVBAR RESPONSIVE BEHAVIOR                                   */
+/* ------------------------------------------------------------ */
+/* Desktop (1024px to 1440px): Full horizontal navbar */
+@media (min-width: 1024px) {
   .ds-hamburger {
-    display: flex;
+    display: none !important;
   }
   .ds-nav-links {
-    display: none;
+    display: flex !important;
   }
   .ds-nav-cta {
-    display: none;
+    display: inline-flex !important;
+  }
+  .ds-nav-langs {
+    display: flex !important;
   }
 }
 
-@media (max-width: 768px) {
+/* Tablet (768px to 1023px): Navigation visible if space permits */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ds-nav-inner {
+    height: 68px;
+    padding: 0 clamp(14px, 2.5vw, 24px);
+    gap: 12px;
+  }
+  .ds-nav.scrolled .ds-nav-inner {
+    height: 60px;
+  }
+  .ds-nav-logo {
+    font-size: 17px;
+    letter-spacing: 0.1em;
+  }
+  .ds-nav-logo span.ds-logo-sub {
+    font-size: 7.5px;
+    padding: 2px 4px;
+  }
+  .ds-hamburger {
+    display: none !important;
+  }
+  .ds-nav-links {
+    display: flex !important;
+    gap: 2px;
+  }
+  .ds-nav-link {
+    font-size: 10.5px;
+    padding: 6px 7px;
+    letter-spacing: 0.05em;
+  }
+  .ds-nav-cta {
+    display: none !important; /* Hide CTA button on tablet to leave clean space for horizontal navigation */
+  }
+  .ds-nav-langs {
+    display: flex !important;
+    padding: 2px;
+  }
+  .ds-lang-btn {
+    padding: 3px 5px;
+  }
+  .lang-code {
+    font-size: 9.5px;
+  }
+}
+
+/* Mobile (< 768px, including < 480px): Collapsible mobile hamburger menu */
+@media (max-width: 767px) {
+  .ds-hamburger {
+    display: flex !important;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .ds-nav-links {
+    display: none !important;
+  }
+  .ds-nav-cta {
+    display: none !important;
+  }
   .ds-nav-inner {
     height: 64px;
     padding: 0 16px;
@@ -594,13 +658,14 @@ button {
   }
   .ds-nav-logo {
     font-size: 18px;
+    letter-spacing: 0.08em;
   }
   .ds-nav-logo span.ds-logo-sub {
     font-size: 8px;
     padding: 2px 5px;
   }
   .ds-nav-langs {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -711,6 +776,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  min-height: 48px;
   padding: 14px 34px;
   font-family: var(--font-body);
   font-size: 13px;
@@ -720,6 +786,8 @@ button {
   text-decoration: none;
   border-radius: var(--radius-xs);
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
@@ -905,12 +973,41 @@ button {
   gap: var(--space-lg);
 }
 
-@media (max-width: 992px) {
+/* Tablet (768px to 1023px): Two-column grids where appropriate */
+@media (min-width: 481px) and (max-width: 1023px) {
+  .ds-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .ds-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .ds-grid-3 > *:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+
+  .ds-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .ds-grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+/* Mobile (< 480px): Single-column stack */
+@media (max-width: 480px) {
   .ds-grid-2,
   .ds-grid-3,
-  .ds-grid-4 {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
+  .ds-grid-4,
+  .ds-grid-cards {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-lg);
   }
 }
 
@@ -1748,16 +1845,17 @@ button {
   color: var(--gold-light);
 }
 
-@media (max-width: 992px) {
+@media (min-width: 481px) and (max-width: 1023px) {
   .ds-footer-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 36px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .ds-footer-inner {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 

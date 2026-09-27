@@ -203,9 +203,15 @@
       object-fit: cover;
     }
 
-    @media (max-width: 992px) {
+    /* Tablet (768px to 1023px): Two-column grids where appropriate */
+    @media (min-width: 481px) and (max-width: 1023px) {
       .hero-cards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .hero-cards-grid .hero-card:last-child {
+        grid-column: span 2;
       }
 
       .stats-strip-inner {
@@ -214,11 +220,61 @@
       }
 
       .sample-split {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    /* Mobile (< 480px): Single-column stack & touch-friendly buttons */
+    @media (max-width: 480px) {
+      #hero {
+        padding: 120px 20px 60px;
+      }
+
+      .hero-cards {
+        margin-top: 40px;
+      }
+
+      .hero-cards-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .hero-cards-grid .hero-card:last-child {
+        grid-column: auto;
+      }
+
+      .stats-strip {
+        padding: 32px 20px;
+      }
+
+      .stats-strip-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .sample-split {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .sample-img-container {
         aspect-ratio: 4/3;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+
+      .hero-actions .ds-btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 14px 20px;
+        text-align: center;
+        justify-content: center;
       }
     }
   </style>
